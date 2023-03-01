@@ -1,0 +1,10 @@
+services:
+  postgres:
+    container_name: demomic-lisence-db
+    image: postgres
+    environment:
+      POSTGRES_DB: DEMOMIC_LICENSE
+      POSTGRES_USER: DEMOMIC_LICENSE
+      POSTGRES_PASSWORD: DEMOMIC_LICENSE
+    ports:
+      - "5432:5432"
