@@ -1,7 +1,15 @@
 package com.demomic.license.api.dto;
 
-import java.util.UUID;
+import lombok.Data;
+import lombok.experimental.Accessors;
+import org.springframework.hateoas.RepresentationModel;
 
-public record LicenseResponse(UUID id, String name) {
+@Data
+@Accessors(chain = true)
+public class LicenseResponse extends RepresentationModel<LicenseResponse> {
+
+    private int id;
+
+    private String name;
 
 }

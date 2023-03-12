@@ -1,6 +1,7 @@
-package com.demomic.license.impl.model;
+package com.demomic.license.impl.model.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,12 +11,19 @@ import java.util.UUID;
 
 @Data
 @Entity
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class License {
 
     @Id
-    private UUID id;
+    private int id;
 
-    private String name;
+    private String description;
+
+    private String organizationId;
+
+    private String productName;
+
+    private String licenseType;
 }
