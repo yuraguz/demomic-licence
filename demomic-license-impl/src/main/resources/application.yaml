@@ -1,0 +1,10 @@
+spring.jpa.hibernate.ddl-auto: create-drop
+spring.datasource.driver-class-name: org.postgresql.Driver
+spring.datasource.url: jdbc:postgresql://postgres:5432/demomic_license
+spring.datasource.username: GZ_DEMOMIC
+spring.datasource.password: GZ_DEMOMIC
+
+management:
+  endpoint:
+    beans:
+      enabled: true
