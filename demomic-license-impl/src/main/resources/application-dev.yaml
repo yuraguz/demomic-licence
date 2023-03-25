@@ -1,6 +1,5 @@
-server:port: 8090
-spring.jpa.hibernate.ddl-auto: create-drop
-spring.datasource.driver-class-name: org.postgresql.Driver
-spring.datasource.url: jdbc:postgresql://localhost:5432/DEMOMIC_LICENSE
-spring.datasource.username: DEMOMIC_LICENSE
-spring.datasource.password: DEMOMIC_LICENSE
+server:
+  port: 8090
+spring:
+  config:
+    import: optional:configserver:http://localhost:9000
