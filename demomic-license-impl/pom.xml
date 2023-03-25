@@ -33,6 +33,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
 
         <!--
         <dependency>
@@ -93,7 +97,7 @@
                 <configuration>
                     <dockerfile>../Dockerfile</dockerfile>
                     <contextDirectory>../</contextDirectory>
-                    <repository>gz-demomic-license</repository>
+                    <repository>demomic-license</repository>
                     <tag>${project.version}</tag>
                     <buildArgs>
                         <JAR_FILE>demomic-license-impl/target/${project.build.finalName}.jar</JAR_FILE>
