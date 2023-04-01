@@ -1,5 +1,6 @@
 package com.demomic.license.api.resource;
 
+import com.demomic.license.api.dto.LicenseFullInfoResponse;
 import com.demomic.license.api.dto.LicenseResponse;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -9,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.Locale;
 
 public interface LicenseResource {
+
+    @RequestMapping(value = "/api/v1/license/{licenseId}", method = RequestMethod.GET)
+    LicenseFullInfoResponse getLicenseFullInfo(@PathVariable("licenseId") int licenseId);
 
     @RequestMapping(value = "/api/v1/organization/{organizationId}/license/{licenseId}", method = RequestMethod.GET)
     LicenseResponse getLicense(@PathVariable("organizationId") String organizationId,
