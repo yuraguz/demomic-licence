@@ -4,5 +4,11 @@ spring:
   config:
     import: optional:configserver:http://localhost:9000
 
+eureka:
+  client:
+    service-url:
+      defaultZone:
+        http://localhost:8070/eureka/
+
 demomic-license:
   greetingMessage: "Some message"

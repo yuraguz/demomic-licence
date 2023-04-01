@@ -5,6 +5,16 @@ spring:
     import: optional:configserver:http://demomic-config:9000
   jpa.hibernate.ddl-auto: create-drop
 
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone:
+        http://demomic-eureka:8070/eureka/
+
 management:
   endpoint:
     health:
