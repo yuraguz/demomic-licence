@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.8</version>
+        <version>3.0.7</version>
         <relativePath/>
     </parent>
 
@@ -18,21 +18,68 @@
     <description>Demomic License Service</description>
 
     <modules>
-        <module>maven/demomic-license-jar</module>
-        <module>maven/demomic-license-bom</module>
         <module>demomic-license-api</module>
         <module>demomic-license-impl</module>
     </modules>
 
+    <properties>
+        <!-- compile / plugins -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- internal -->
+        <demomic-product.version>0.0.1-SNAPSHOT</demomic-product.version>
+
+        <!-- external -->
+        <spring-cloud.version>2022.0.3</spring-cloud.version>
+        <hibernate-core.version>6.2.3.Final</hibernate-core.version>
+        <mapstruct.version>1.5.3.Final</mapstruct.version>
+        <lombok.version>1.18.24</lombok.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
+
+            <!-- internal -->
             <dependency>
                 <groupId>com.demomic</groupId>
-                <artifactId>demomic-license-bom</artifactId>
+                <artifactId>demomic-license-api</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.demomic</groupId>
+                <artifactId>demomic-product-api</artifactId>
+                <version>${demomic-product.version}</version>
+            </dependency>
+
+            <!-- external -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate-core.version}</version>
+            </dependency>
+
+            <!-- other -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 </project>

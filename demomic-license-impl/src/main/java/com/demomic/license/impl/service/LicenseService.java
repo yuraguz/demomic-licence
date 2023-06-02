@@ -3,10 +3,10 @@ package com.demomic.license.impl.service;
 import com.demomic.license.impl.model.data.LicenseData;
 import com.demomic.license.impl.model.entity.License;
 import com.demomic.license.impl.repository.LicenseRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.Random;
 
 @Service

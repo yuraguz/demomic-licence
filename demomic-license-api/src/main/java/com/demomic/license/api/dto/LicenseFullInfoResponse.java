@@ -11,6 +11,4 @@ public class LicenseFullInfoResponse {
 
     private LicenseResponse license;
 
-    private LicenseProductResponse licenseProduct;
-
 }

@@ -15,6 +15,16 @@ eureka:
       defaultZone:
         http://demomic-eureka:8070/eureka/
 
+resilience4j:
+  circuitbreaker:
+    instances:
+      demomic-license:
+        sliding-window-size: 5
+        wait-duration-in-open-state: 10s
+        slow-call-duration-threshold: 3s
+        failure-rate-threshold: 10
+
+
 management:
   endpoint:
     health:

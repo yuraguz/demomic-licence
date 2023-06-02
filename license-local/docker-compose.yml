@@ -7,4 +7,4 @@ services:
       POSTGRES_USER: DEMOMIC_LICENSE
       POSTGRES_PASSWORD: DEMOMIC_LICENSE
     ports:
-      - "5432:5432"
+      - "5435:5432"
